@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="image/logo.png">
+    <title>Заказ автомобилей | DriveHub</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" onclick="window.location.href='index.html'">DriveHub</div>
+        </nav>
+    </header>
+
+    <section class="order-page">
+        <h1>Заказ автомобилей</h1>
+        <p>Выберите модель, комплектацию и дополнительные услуги для вашего автомобиля.</p>
+
+        <div class="order-form">
+            <div class="model-selection">
+                <h2>Выберите модель</h2>
+                <select id="car-model">
+                    <option value="">Выбрать машину</option>
+                    <option value="cls">Mercedes-Benz CLS</option>
+                    <option value="gls">Mercedes-Benz GLS</option>
+                    <option value="g-class">Mercedes-Benz G-Class</option>
+                    <option value="amg-gt">Mercedes-AMG GT</option>
+                    <option value="e-class">Mercedes-Benz E-Class</option>
+                    <option value="s-class">Mercedes-Benz S-Class</option>
+                </select>
+            </div>
+
+            <div class="car-details" id="car-details">
+                <div class="car-image" id="car-image"></div>
+                <div class="configuration-selection">
+                    <h2>Выберите комплектацию</h2>
+                    <select id="car-configuration">
+                        <option value="base">Базовая</option>
+                        <option value="comfort">Комфорт</option>
+                        <option value="premium">Премиум</option>
+                        <option value="luxury">Люкс</option>
+                    </select>
+                </div>
+
+                <div class="color-selection">
+                    <h2>Выберите цвет</h2>
+                    <div class="color-options">
+                        <div class="color-option" data-color="000000" style="--color: #000000;"></div>
+                        <div class="color-option" data-color="FFFFFF" style="--color: #FFFFFF;"></div>
+                        <div class="color-option" data-color="FF0000" style="--color: #FF0000;"></div>
+                        <div class="color-option" data-color="0000FF" style="--color: #0000FF;"></div>
+                        <div class="color-option" data-color="00FF00" style="--color: #00FF00;"></div>
+                        <div class="color-option" data-color="FFFF00" style="--color: #FFFF00;"></div>
+                    </div>
+                </div>
+
+                <div class="additional-services">
+                    <h2>Дополнительные услуги</h2>
+                    <label><input type="checkbox" id="winter-tires"> Зимняя резина</label>
+                    <label><input type="checkbox" id="extended-warranty"> Расширенная гарантия</label>
+                    <label><input type="checkbox" id="tinted-windows"> Тонированные стекла</label> <br><br>
+                    <label><input type="checkbox" id="parking-sensors"> Парковочные датчики</label>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Контактная информация</h2>
+                    <label>Телефон: <input type="text" id="phone-number" required></label>
+                    <label>Email: <input type="email" id="email" required></label>
+                </div>
+
+                <button id="submit-order">Оформить заказ</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DriveHub. Все права защищены. <br>by @qwerty3790 - telegram</p>
+    </footer>
+
+    <script src="order.js"></script>
+</body>
+</html>

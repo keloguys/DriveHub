@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="image/logo.png">
+    <title>Автомагазин "DriveHub"</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DriveHub</div>
+            <ul class="nav-links">
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#gallery">Автопарк</a></li>
+                <li><a href="#order">Оформить заказ</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Добро пожаловать в DriveHub</h1>
+            <p>Лучшие автомобили и сервис для вас</p>
+            <a href="#about" class="btn">Узнать больше</a>
+        </div>
+        <div class="parallax-image" id="parallax" style="background: url('image/тачка.jpg') no-repeat center center/cover;"></div>
+    </section>
+
+    <section id="about" class="about" style="height: 100vh;">
+        <h2>О нас</h2>
+        <p>Мы предлагаем широкий выбор автомобилей, а также качественный сервис для всех наших клиентов.</p>
+        <div class="about-stats">
+            <div class="stat-block">
+                <div class="stat-number" data-target="20">0</div>
+                <div class="stat-label">Лет на рынке</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-number" data-target="1500">0</div>
+                <div class="stat-label">Обслуженных клиентов</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Проданных автомобилей</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Партнеров</div>
+            </div>
+        </div>
+    
+        <div class="reviews">
+            <h3>Отзывы наших клиентов</h3>
+            <div class="review-list">
+                <div class="review" onclick="expandReview(this)">
+                    <img src="image/avatar1.jpg" alt="Аватар" class="review-avatar">
+                    <div class="review-content">
+                        <h4>Иван Иванов</h4>
+                        <p>Отличный сервис! Все прошло гладко, рекомендую.</p>
+                    </div>
+                </div>
+                <div class="review" onclick="expandReview(this)">
+                    <img src="image/avatar2.jpg" alt="Аватар" class="review-avatar">
+                    <div class="review-content">
+                        <h4>Петр Петров</h4>
+                        <p>Купил машину, все понравилось. Спасибо!</p>
+                    </div>
+                </div>
+                <div class="review" onclick="expandReview(this)">
+                    <img src="image/avatar3.jpg" alt="Аватар" class="review-avatar">
+                    <div class="review-content">
+                        <h4>Анна Сидорова</h4>
+                        <p>Очень довольна покупкой. Все прошло быстро и без проблем.</p>
+                    </div>
+                </div>
+                <div class="review" onclick="expandReview(this)">
+                    <img src="image/avatar4.jpg" alt="Аватар" class="review-avatar">
+                    <div class="review-content">
+                        <h4>Дмитрий Козлов</h4>
+                        <p>Отличный выбор автомобилей. Спасибо за помощь!</p>
+                    </div>
+                </div>
+                <div class="review" onclick="expandReview(this)">
+                    <img src="image/avatar5.jpg" alt="Аватар" class="review-avatar">
+                    <div class="review-content">
+                        <h4>Екатерина Морозова</h4>
+                        <p>Все прошло на высшем уровне. Рекомендую!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services" style="height: 100vh;">
+        <div class="service-text2">
+            <h2>Наши услуги</h2>
+        </div>
+        <div class="service-slider">
+            <div class="service-card">
+                <img src="image/service1.jpg" alt="Услуга 1">
+                <div class="service-text">
+                    <h3>Продажа автомобилей</h3>
+                    <p>Широкий выбор новых и подержанных автомобилей.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="image/service2.jpg" alt="Услуга 2">
+                <div class="service-text">
+                    <h3>Техническое обслуживание</h3>
+                    <p>Профессиональное обслуживание и ремонт вашего автомобиля.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="image/service3.jpg" alt="Услуга 3">
+                <div class="service-text">
+                    <h3>Автокредитование</h3>
+                    <p>Удобные условия кредитования для покупки автомобиля.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="image/service4.jpg" alt="Услуга 4">
+                <div class="service-text">
+                    <h3>Автострахование</h3>
+                    <p>Надежное страхование для вашего автомобиля.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="image/service5.jpg" alt="Услуга 5">
+                <div class="service-text">
+                    <h3>Тюнинг и доработка</h3>
+                    <p>Индивидуальный подход к каждому автомобилю.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button onclick="prevService()" class="gallery-btn prev-btn">←</button>
+            <button onclick="nextService()" class="gallery-btn next-btn">→</button>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery" style="height: 100vh;">
+        <h2>Изысканный автопарк. <br> Каждый найдет свой автомобиль.</h2>
+        <div class="gallery-slider">
+            <div class="gallery-slide">
+                <img src="image/car1.jpg" alt="Автомобиль 1 - cls 63 amg">
+                <div class="gallery-description">
+                    <h3>Mercedes-Benz CLS 63 AMG</h3>
+                    <ul class="car-specs">
+                        <li>
+                            <span class="icon"><i class="fas fa-cogs"></i></span>
+                            <span class="spec-label">Двигатель</span>
+                            <span class="spec-value">5.5L V8</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                            <span class="spec-label">Мощность</span>
+                            <span class="spec-value">577 л.с.</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-gas-pump"></i></span>
+                            <span class="spec-label">Расход</span>
+                            <span class="spec-value">10.5 л/100км</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-road"></i></span>
+                            <span class="spec-label">Пробег</span>
+                            <span class="spec-value">15,000 км</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gallery-slide">
+                <img src="image/car2.jpg" alt="Автомобиль 2 - gls 600">
+                <div class="gallery-description">
+                    <h3>Mercedes-Benz GLS 600</h3>
+                    <ul class="car-specs">
+                        <li>
+                            <span class="icon"><i class="fas fa-cogs"></i></span>
+                            <span class="spec-label">Двигатель</span>
+                            <span class="spec-value">4.0L V8</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                            <span class="spec-label">Мощность</span>
+                            <span class="spec-value">550 л.с.</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-gas-pump"></i></span>
+                            <span class="spec-label">Расход</span>
+                            <span class="spec-value">12.0 л/100км</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-road"></i></span>
+                            <span class="spec-label">Пробег</span>
+                            <span class="spec-value">10,000 км</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gallery-slide">
+                <img src="image/car3.jpg" alt="Автомобиль 3 - benz g-класс">
+                <div class="gallery-description">
+                    <h3>Mercedes-Benz G-Class</h3>
+                    <ul class="car-specs">
+                        <li>
+                            <span class="icon"><i class="fas fa-cogs"></i></span>
+                            <span class="spec-label">Двигатель</span>
+                            <span class="spec-value">4.0L V8</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                            <span class="spec-label">Мощность</span>
+                            <span class="spec-value">577 л.с.</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-gas-pump"></i></span>
+                            <span class="spec-label">Расход</span>
+                            <span class="spec-value">13.5 л/100км</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-road"></i></span>
+                            <span class="spec-label">Пробег</span>
+                            <span class="spec-value">8,000 км</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gallery-slide">
+                <img src="image/car4.jpg" alt="Автомобиль 4 - amg gt">
+                <div class="gallery-description">
+                    <h3>Mercedes-AMG GT</h3>
+                    <ul class="car-specs">
+                        <li>
+                            <span class="icon"><i class="fas fa-cogs"></i></span>
+                            <span class="spec-label">Двигатель</span>
+                            <span class="spec-value">4.0L V8</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                            <span class="spec-label">Мощность</span>
+                            <span class="spec-value">523 л.с.</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-gas-pump"></i></span>
+                            <span class="spec-label">Расход</span>
+                            <span class="spec-value">11.0 л/100км</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-road"></i></span>
+                            <span class="spec-label">Пробег</span>
+                            <span class="spec-value">12,000 км</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button onclick="prevGallerySlide()" class="gallery-btn prev-btn">←</button>
+            <button onclick="nextGallerySlide()" class="gallery-btn next-btn">→</button>
+        </div>
+    </section>
+
+    <section id="order" class="order" style="height: 100vh;">
+        <div class="order-content">
+            <h2>Готовы оформить заказ?</h2>
+            <p>Выберите свой автомобиль и начните оформление прямо сейчас. Мы сделаем процесс максимально удобным и быстрым!</p>
+            <a href="order.html" class="order-btn">Перейти к оформлению</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact" style="height: 100vh;">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами для получения дополнительной информации:</p>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш email" required>
+            <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+            <button type="submit" class="contact-btn">Отправить</button>
+        </form>
+    
+        <div class="map-container">
+            <h3>Мы находимся здесь:</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.372988002689!2d37.61531071593097!3d55.75202308055287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQvtCy0YHQutCw0Y8g0YPQuy4sIDUsINCc0L7RgdC60LLQsCwgMTA3NTEx!5e0!3m2!1sru!2sru!4v1698774000000!5m2!1sru!2sru"
+                width="100%"
+                height="300"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DriveHub. Все права защищены. <br>by @qwerty3790 - telegram</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Убедитесь, что путь правильный -->
+</body>
+</html>
