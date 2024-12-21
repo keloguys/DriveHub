@@ -1,1 +1,967 @@
-body{margin:0;font-family:'Arial',sans-serif;color:#333;line-height:1.6;font-size:1.1rem}html{scroll-behavior:smooth}h1,h2,h3,h4,h5,h6{font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-shadow:2px 2px 4px rgba(0,0,0,.2)}p{font-family:'Georgia',serif;font-size:1.2rem;line-height:1.8;text-align:center}header{background:#333;color:#fff;padding:1rem 0}nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 20px}.logo{font-size:1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.nav-links{list-style:none;display:flex;gap:20px}.nav-links a{color:#fff;text-decoration:none;transition:color .3s;font-size:1.1rem;font-weight:700;letter-spacing:1px}.nav-links a:hover{color:#ffcc00}.hero{position:relative;height:100vh;overflow:hidden}.hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;z-index:2}.hero-content h1{font-size:3.5rem;margin-bottom:15px;text-shadow:3px 3px 6px rgba(0,0,0,.4)}.hero-content p{font-size:1.5rem;margin-bottom:30px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.hero-content .btn{background:#ffcc00;color:#333;padding:10px 20px;text-decoration:none;border-radius:5px;transition:background .3s;font-size:1.2rem;font-weight:700;letter-spacing:1px}.hero-content .btn:hover{background:#e6b800}.parallax-image{background:url('тачка.jpg') no-repeat center center/cover;position:absolute;margin:0;top:-60px;left:0;width:100%;height:1100px;z-index:1}.about{padding:50px 20px;text-align:center;background:linear-gradient(135deg,#000,#000);color:#fff}.about h2{font-size:2.5rem;margin-bottom:30px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.about p{font-size:1.3rem;margin-bottom:40px;text-align:center}.about-stats{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}.stat-block{flex:1 1 200px;background:rgba(255,255,255,.1);padding:20px;border-radius:10px;text-align:center;transition:transform .3s ease,box-shadow .3s ease}.stat-block:hover{transform:scale(1.1);box-shadow:0 6px 15px rgba(0,0,0,.3)}.stat-number{font-size:2.5rem;font-weight:700;color:#ffcc00;margin-bottom:10px}.stat-label{font-size:1rem;color:#fff}.reviews{margin-top:40px;text-align:center}.reviews h3{font-size:2rem;margin-bottom:20px;font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.review-list{display:flex;justify-content:center;flex-wrap:wrap;gap:20px}.review{background:rgba(255,255,255,.1);padding:20px;border-radius:10px;text-align:center;max-width:300px;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}.review:hover{transform:scale(1.1);box-shadow:0 6px 15px rgba(0,0,0,.3)}.review-avatar{width:80px;height:80px;border-radius:50%;margin-bottom:10px}.review-content h4{font-size:1.2rem;margin-bottom:10px;color:#ffcc00}.review-content p{font-size:1rem;color:#fff}.review.expanded{max-width:600px;z-index:100;position:relative}.services{position:relative;padding:50px 20px;background:linear-gradient(135deg,#000,#000);overflow:hidden}.service-slider{display:flex;width:100%;height:500px;position:relative;overflow:hidden}.service-card{min-width:100%;height:100%;position:absolute;top:0;left:0;opacity:0;transition:opacity .8s ease,transform .8s ease;display:flex;justify-content:center;align-items:center}.service-card.visible{opacity:1;transform:translateX(0)}.service-card img{width:100%;height:100%;object-fit:cover;border-radius:10px}.service-card:active .service-text,.service-card:hover .service-text{transform:translateY(-10px);box-shadow:0 6px 15px rgba(0,0,0,.3)}.service-text{position:absolute;bottom:20px;left:20px;color:#fff;background:rgba(0,0,0,.6);padding:15px 25px;border-radius:10px;transition:all .3s ease;backdrop-filter:blur(5px)}.service-text h3{margin:0 0 10px;font-size:1.8rem;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.service-text p{margin:0;font-size:1.2rem;text-shadow:1px 1px 2px rgba(0,0,0,.3)}.service-text2 h2{text-align:center;margin-bottom:20px;font-size:2rem;font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;text-shadow:2px 2px 4px rgba(0,0,0,.3);color:#fff}.slider-controls{display:flex;justify-content:center;margin-top:20px}.slider-controls .gallery-btn{margin:0 20px;background:linear-gradient(135deg,#ffcc00,#e6b800);color:#333;padding:15px 30px;border:none;border-radius:50px;cursor:pointer;transition:all .5s ease;font-size:1.5rem;position:relative;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:1;text-transform:uppercase;letter-spacing:2px}.slider-controls .gallery-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(135deg,#e6b800,#ffcc00);transition:left .5s ease;z-index:-1}.slider-controls .gallery-btn:hover::before{left:0}.slider-controls .gallery-btn:hover{transform:scale(1.1);box-shadow:0 8px 20px rgba(0,0,0,.4)}.slider-controls .gallery-btn:active{transform:scale(.95);box-shadow:0 4px 10px rgba(0,0,0,.3)}.prev-btn,.next-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);color:#fff;border:none;padding:10px 20px;cursor:pointer;font-size:1.5rem;transition:background .3s,transform .3s;z-index:10}.prev-btn{left:20px}.next-btn{right:20px}.prev-btn:hover,.next-btn:hover{background:rgba(0,0,0,.8);transform:translateY(-50%) scale(1.1)}.gallery{padding:50px 20px;text-align:center;background:linear-gradient(135deg,#000,#000);overflow:hidden;position:relative;height:100vh}.gallery h2{font-size:2.5rem;margin-bottom:20px;color:#fff;font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.gallery-slider{display:flex;justify-content:center;align-items:center;gap:50px;flex-wrap:wrap;position:relative;perspective:1000px;height:100%;margin-top:-100px;margin-left:330px}.gallery-slide{display:flex;justify-content:center;align-items:center;gap:20px;opacity:0;transition:opacity .8s ease,transform .8s ease;position:absolute;width:100%}.gallery-slide.visible{opacity:1;transform:translateX(0)}.gallery-slide img{width:50%;height:auto;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.2)}.gallery-description{width:50%;color:#fff;text-align:left}.gallery-description h3{font-size:2rem;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.car-specs{list-style:none;padding:0}.car-specs li{display:flex;align-items:center;margin-bottom:15px}.car-specs .icon{width:40px;height:40px;background:#ffcc00;border-radius:50%;display:flex;justify-content:center;align-items:center;margin-right:15px}.car-specs .icon i{color:#333;font-size:1.2rem}.car-specs .spec-label{font-size:1.2rem;color:#ffcc00;margin-right:10px}.car-specs .spec-value{font-size:1.2rem;color:#fff}.order{padding:50px 20px;text-align:center;background:linear-gradient(135deg,#000,#000);color:#fff;display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden;height:100vh}.order-content{max-width:800px;margin:0 auto;opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}.order-content.animated{opacity:1;transform:translateY(0)}.order-content h2{font-size:2.5rem;margin-bottom:20px;font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.order-content p{font-size:1.2rem;margin-bottom:40px;line-height:1.6}.order-btn{background:linear-gradient(135deg,#ffcc00,#e6b800);color:#333;padding:15px 30px;text-decoration:none;border-radius:5px;font-size:1.2rem;transition:background .5s ease,transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.2);display:inline-block}.order-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(135deg,#e6b800,#ffcc00);transition:left .5s ease;z-index:-1}.order-btn:hover::before{left:0}.order-btn:hover{transform:scale(1.1);box-shadow:0 6px 15px rgba(0,0,0,.3)}.contact{padding:50px 20px;text-align:center;background:linear-gradient(135deg,#000,#000)}.contact form{max-width:600px;margin:0 auto}.contact input,.contact textarea{width:100%;padding:10px;margin:10px 0;border:1px solid #ccc;border-radius:5px}.contact-btn{background:linear-gradient(135deg,#ffcc00,#e6b800);color:#333;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;transition:background .5s ease,transform .3s ease;font-size:1rem;position:relative;overflow:hidden}.contact-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(135deg,#c2f6cf,#cbffd8);transition:left .5s ease;z-index:-1}.contact-btn:hover::before{left:0}.contact-btn:hover{transform:scale(1.1)}.map-container{margin-top:40px;text-align:center;width:100%;max-width:800px;margin-left:auto;margin-right:auto}.map-container h3{font-size:1.5rem;margin-bottom:20px;color:#ffcc00;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.map-container iframe{border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.2);border:none}footer{background:#333;color:#fff;text-align:center;padding:20px 0}@media (max-width:768px){body{font-size:1rem}h1,h2,h3,h4,h5,h6{font-size:1.5rem}p{font-size:1rem}.nav-links{display:none}.logo{font-size:1.2rem}.hero-content h1{font-size:2rem}.hero-content p{font-size:1rem}.hero-content .btn{font-size:1rem;padding:8px 16px}.about-stats{flex-direction:column}.stat-block{margin-bottom:20px}.review-list{flex-direction:column}.review{max-width:100%}.service-card{flex-direction:column}.service-text{position:static;background:rgba(0,0,0,.6);padding:10px;border-radius:0}.service-text h3{font-size:1.2rem}.service-text p{font-size:1rem}.gallery-slider{flex-direction:column}.gallery-slide{flex-direction:column}.gallery-slide img{width:100%}.gallery-description{width:100%;text-align:center}.car-specs li{flex-direction:column;text-align:center}.order-content h2{font-size:1.5rem}.order-content p{font-size:1rem}.order-btn{font-size:1rem;padding:10px 20px}.contact form{max-width:100%}.contact input,.contact textarea{font-size:1rem}.contact-btn{font-size:1rem;padding:10px 20px}footer{padding:10px 0}}
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #ffcc00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content .btn {
+    background: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-content .btn:hover {
+    background: #e6b800;
+}
+
+.parallax-image {
+    background: url('image/тачка.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #000, #000);
+    color: #fff;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-block {
+    flex: 1 1 200px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-block:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.reviews {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.reviews h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.review-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.review {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.review-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.review-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.review-content p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.review.expanded {
+    max-width: 600px;
+    z-index: 100;
+    position: relative;
+}
+
+.services {
+    position: relative;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #000, #000);
+    overflow: hidden;
+}
+
+.service-slider {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card {
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.service-card:active .service-text,
+.service-card:hover .service-text {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 25px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.service-text h3 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.service-text p {
+    margin: 0;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.service-text2 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slider-controls .gallery-btn {
+    margin: 0 20px;
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    color: #333;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-size: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.slider-controls .gallery-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e6b800, #ffcc00);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.slider-controls .gallery-btn:hover::before {
+    left: 0;
+}
+
+.slider-controls .gallery-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.slider-controls .gallery-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background 0.3s, transform 0.3s;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #000, #000);
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+.gallery h2 {
+    margin-top: 100px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    position: relative;
+    perspective: 1000px;
+    height: 100%;
+    margin-top: -100px;
+    margin-left: 330px;
+}
+
+.gallery-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: absolute;
+    width: 100%;
+}
+
+.gallery-slide.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.gallery-slide img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-description {
+    width: 50%;
+    color: #fff;
+    text-align: left;
+}
+
+.gallery-description h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.car-specs {
+    list-style: none;
+    padding: 0;
+}
+
+.car-specs li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.car-specs .icon {
+    width: 40px;
+    height: 40px;
+    background: #ffcc00;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.car-specs .icon i {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.car-specs .spec-label {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    margin-right: 10px;
+}
+
+.car-specs .spec-value {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.order {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #000, #000);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.order-content {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.order-content.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.order-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.order-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.order-btn {
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    color: #333;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+.order-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e6b800, #ffcc00);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.order-btn:hover::before {
+    left: 0;
+}
+
+.order-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #000, #000);
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-btn {
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.5s ease, transform 0.3s ease;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #c2f6cf, #cbffd8);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.contact-btn:hover::before {
+    left: 0;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+}
+
+.map-container {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+    .service-slider,
+    .gallery-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card,
+    .gallery-slide {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .gallery-description {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Скрываем изображения в разделе галереи */
+    .gallery-slide img {
+        display: none;
+    }
+
+    /* Устанавливаем описание автомобилей на всю ширину */
+    .gallery-description {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Убираем горизонтальное выравнивание для характеристик автомобилей */
+    .car-specs li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Центрируем иконки характеристик */
+    .car-specs .icon {
+        margin: 0 auto 10px;
+    }
+
+    /* Уменьшаем размер заголовка описания автомобиля */
+    .gallery-description h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    /* Уменьшаем размер текста характеристик автомобиля */
+    .car-specs .spec-label,
+    .car-specs .spec-value {
+        font-size: 1rem;
+    }
+
+    /* Убираем отступы у слайдера */
+    .gallery-slider {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    /* Устанавливаем слайды в вертикальное положение */
+    .gallery-slide {
+        flex-direction: column;
+    }
+
+    /* Уменьшаем отступ для кнопок слайдера */
+    .slider-controls {
+        margin-top: 10px;
+    }
+
+    /* Убираем горизонтальное выравнивание для слайдов */
+    .gallery-slide {
+        flex-direction: column;
+    }
+
+    /* Устанавливаем ширину описания автомобиля на всю ширину */
+    .gallery-description {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Убираем горизонтальное выравнивание для характеристик */
+    .car-specs li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Центрируем иконки характеристик */
+    .car-specs .icon {
+        margin: 0 auto 10px;
+    }
+
+    /* Уменьшаем размер заголовка описания автомобиля */
+    .gallery-description h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    /* Уменьшаем размер текста характеристик автомобиля */
+    .car-specs .spec-label,
+    .car-specs .spec-value {
+        font-size: 1rem;
+    }
+
+    /* Убираем отступы у слайдера */
+    .gallery-slider {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    /* Устанавливаем слайды в вертикальное положение */
+    .gallery-slide {
+        flex-direction: column;
+    }
+
+    /* Уменьшаем отступ для кнопок слайдера */
+    .slider-controls {
+        margin-top: 10px;
+    }
+
+    /* Улучшение адаптивности для кнопок навигации в header */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    /* Уменьшаем размер текста в разделе "О нас" */
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1.1rem;
+    }
+
+    /* Уменьшаем размер текста в разделе "Услуги" */
+    .service-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-text p {
+        font-size: 1rem;
+    }
+
+    /* Уменьшаем размер текста в разделе "Галерея" */
+    .gallery h2 {
+        font-size: 2rem;
+    }
+
+    /* Уменьшаем размер текста в разделе "Оформить заказ" */
+    .order-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .order-content p {
+        font-size: 1rem;
+    }
+
+    /* Уменьшаем размер кнопки в разделе "Оформить заказ" */
+    .order-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    /* Уменьшаем размер текста в разделе "Контакты" */
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact p {
+        font-size: 1.1rem;
+    }
+
+    /* Уменьшаем размер кнопки в разделе "Контакты" */
+    .contact-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    /* Уменьшаем размер текста в футере */
+    footer {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-content .btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .about-stats {
+        flex-direction: column;
+    }
+
+    .stat-block {
+        margin-bottom: 15px;
+    }
+
+    .review-list {
+        flex-direction: column;
+    }
+
+    .review {
+        max-width: 100%;
+    }
+
+    .service-card {
+        flex-direction: column;
+    }
+
+    .service-text {
+        position: static;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    .service-text h3 {
+        font-size: 1rem;
+    }
+
+    .service-text p {
+        font-size: 0.9rem;
+    }
+
+    .gallery-slider {
+        flex-direction: column;
+    }
+
+    .gallery-slide {
+        flex-direction: column;
+    }
+
+    .gallery-slide img {
+        width: 100%;
+    }
+
+    .gallery-description {
+        width: 100%;
+        text-align: center;
+    }
+
+    .car-specs li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .order-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .order-content p {
+        font-size: 0.9rem;
+    }
+
+    .order-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .contact form {
+        max-width: 100%;
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    footer {
+        padding: 8px 0;
+    }
+
+    /* Улучшение адаптивности для кнопок навигации в header */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+}

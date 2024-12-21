@@ -1,3 +1,26 @@
+// Получаем элемент меню
+const header = document.querySelector('header');
+
+// Переменные для отслеживания прокрутки
+let prevScrollPos = window.pageYOffset;
+
+// Функция для обработки прокрутки
+window.onscroll = function () {
+    const currentScrollPos = window.pageYOffset;
+
+    // Если прокрутка вниз, скрываем меню
+    if (prevScrollPos < currentScrollPos) {
+        header.classList.add('hidden');
+    } else {
+        // Если прокрутка вверх, показываем меню
+        header.classList.remove('hidden');
+    }
+
+    // Обновляем предыдущее положение прокрутки
+    prevScrollPos = currentScrollPos;
+};
+
+// Получаем элементы для паралакса и анимации
 const parallax = document.getElementById('parallax');
 const galleryImages = document.querySelectorAll('.gallery-images img');
 const serviceCards = document.querySelectorAll('.service-card');
@@ -167,6 +190,7 @@ window.addEventListener('load', () => {
     const orderContent = document.querySelector('.order-content');
     orderContent.classList.add('animated'); // Добавляем класс для анимации
 });
+
 // Добавляем обработчик события для карточек услуг
 serviceCards.forEach(card => {
     card.addEventListener('mouseenter', () => {
