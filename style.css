@@ -246,9 +246,12 @@ nav {
     height: 500px;
     position: relative;
     overflow: hidden;
+    perspective: 1000px;
 }
 
 .service-card {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
     min-width: 100%;
     height: 100%;
     position: absolute;
@@ -259,11 +262,15 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 1000px;
 }
 
 .service-card.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) rotateY(0deg);
+}
+.service-card:not(.visible) {
+    transform: translateX(-100%) rotateY(-30deg);
 }
 
 .service-card img {
@@ -271,6 +278,14 @@ nav {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+.service-card:hover {
+    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+    transform: scale(1.05);
+}
+.service-card:hover img {
+    transform: scale(1.1);
 }
 
 .service-card:active .service-text,
@@ -278,7 +293,6 @@ nav {
     transform: translateY(-10px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
-
 .service-text {
     position: absolute;
     bottom: 20px;
@@ -295,101 +309,101 @@ nav {
     margin: 0 0 10px;
     font-size: 1.8rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #ffcc00;
 }
 
 .service-text p {
     margin: 0;
     font-size: 1.2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: #fff;
 }
 
 .service-text2 h2 {
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 50px;
+    margin-top: 85px;
     font-size: 2rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    color: #fff;
+    color: #ffffff;
 }
 
 .slider-controls {
     display: flex;
     justify-content: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
-.slider-controls .gallery-btn {
-    margin: 0 20px;
+.slider-btn {
     background: linear-gradient(135deg, #ffcc00, #e6b800);
     color: #333;
-    padding: 15px 30px;
     border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.5s ease;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     font-size: 1.5rem;
-    position: relative;
-    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
-.slider-controls .gallery-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #e6b800, #ffcc00);
-    transition: left 0.5s ease;
-    z-index: -1;
-}
-
-.slider-controls .gallery-btn:hover::before {
-    left: 0;
-}
-
-.slider-controls .gallery-btn:hover {
+.slider-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.slider-controls .gallery-btn:active {
+.slider-btn:active {
     transform: scale(0.95);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.prev-btn,
-.next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: background 0.3s, transform 0.3s;
-    z-index: 10;
+.slider-btn.prev-btn {
+    animation: pulseLeft 1.5s infinite;
 }
 
-.prev-btn {
-    left: 20px;
+.slider-btn.next-btn {
+    animation: pulseRight 1.5s infinite;
 }
 
-.next-btn {
-    right: 20px;
+@keyframes pulseLeft {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
-.prev-btn:hover,
-.next-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translateY(-50%) scale(1.1);
+@keyframes pulseRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
 }
 
 .gallery {
@@ -420,7 +434,7 @@ nav {
     perspective: 1000px;
     height: 100%;
     margin-top: -100px;
-    margin-left: 330px;
+    margin-left: 0; /* Убираем отступ слева */
 }
 
 .gallery-slide {
@@ -440,14 +454,16 @@ nav {
 }
 
 .gallery-slide img {
-    width: 50%;
-    height: auto;
+    width: 100%; /* Устанавливаем ширину изображения на 100% */
+    max-width: 600px; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-description {
-    width: 50%;
+    width: 100%; /* Устанавливаем ширину описания на 100% */
+    max-width: 600px; /* Максимальная ширина описания */
     color: #fff;
     text-align: left;
 }
@@ -576,6 +592,10 @@ nav {
     background: linear-gradient(135deg, #000, #000);
 }
 
+#contact-text{
+color: #ffffff;
+}
+
 .contact form {
     max-width: 600px;
     margin: 0 auto;
@@ -635,7 +655,7 @@ nav {
 .map-container h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: #ffcc00;
+    color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -721,56 +741,8 @@ footer {
     /* Уменьшаем отступ для кнопок слайдера */
     .slider-controls {
         margin-top: 10px;
-    }
-
-    /* Убираем горизонтальное выравнивание для слайдов */
-    .gallery-slide {
-        flex-direction: column;
-    }
-
-    /* Устанавливаем ширину описания автомобиля на всю ширину */
-    .gallery-description {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Убираем горизонтальное выравнивание для характеристик */
-    .car-specs li {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* Центрируем иконки характеристик */
-    .car-specs .icon {
-        margin: 0 auto 10px;
-    }
-
-    /* Уменьшаем размер заголовка описания автомобиля */
-    .gallery-description h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-
-    /* Уменьшаем размер текста характеристик автомобиля */
-    .car-specs .spec-label,
-    .car-specs .spec-value {
-        font-size: 1rem;
-    }
-
-    /* Убираем отступы у слайдера */
-    .gallery-slider {
-        margin-top: 0;
-        margin-left: 0;
-    }
-
-    /* Устанавливаем слайды в вертикальное положение */
-    .gallery-slide {
-        flex-direction: column;
-    }
-
-    /* Уменьшаем отступ для кнопок слайдера */
-    .slider-controls {
-        margin-top: 10px;
+        margin-top: 40px;
+        gap: 40px;
     }
 
     /* Улучшение адаптивности для кнопок навигации в header */
@@ -853,6 +825,7 @@ footer {
         font-size: 2rem;
     }
 
+
     .hero-content p {
         font-size: 1rem;
     }
@@ -917,6 +890,7 @@ footer {
     .car-specs li {
         flex-direction: column;
         text-align: center;
+        height: 70px;
     }
 
     .order-content h2 {

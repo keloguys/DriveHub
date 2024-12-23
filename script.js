@@ -100,15 +100,14 @@ function showService(index) {
     });
 }
 
-// Функция для переключения на следующую услугу
-function nextService() {
-    currentServiceIndex = (currentServiceIndex + 1) % serviceCards.length;
-    showService(currentServiceIndex);
-}
-
 // Функция для переключения на предыдущую услугу
 function prevService() {
     currentServiceIndex = (currentServiceIndex - 1 + serviceCards.length) % serviceCards.length;
+    showService(currentServiceIndex);
+}
+// Функция для переключения на следующую услугу
+function nextService() {
+    currentServiceIndex = (currentServiceIndex + 1) % serviceCards.length;
     showService(currentServiceIndex);
 }
 
@@ -180,24 +179,54 @@ function animateNumbers() {
     });
 }
 
-// Вызываем функцию анимации чисел при загрузке страницы
-window.addEventListener('load', () => {
-    animateNumbers();
+function animateNumbersInViewport() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(statNumber => {
+        // Проверяем, была ли уже запущена анимация для этого элемента
+        if (!statNumber.classList.contains('animated') && isElementInViewport(statNumber)) {
+            const target = parseInt(statNumber.getAttribute('data-target'));
+            let start = 0;
+            const duration = 2000; // 2 секунды
+            const step = target / (duration / 16); // 16ms - примерно 60fps
+
+            const timer = setInterval(() => {
+                start += step;
+                if (start >= target) {
+                    clearInterval(timer);
+                    start = target;
+                }
+                statNumber.textContent = Math.round(start);
+            }, 16);
+
+            // Добавляем класс, чтобы отметить, что анимация завершена
+            statNumber.classList.add('animated');
+        }
+    });
+}
+
+// Вызываем функцию анимации чисел при прокрутке страницы
+window.addEventListener('scroll', () => {
+    animateNumbersInViewport();
 });
 
-// Анимация для текста в разделе "Перейти к оформлению"
+// Вызываем функцию анимации чисел при загрузке страницы, если элементы уже в области просмотра
 window.addEventListener('load', () => {
-    const orderContent = document.querySelector('.order-content');
-    orderContent.classList.add('animated'); // Добавляем класс для анимации
+    animateNumbersInViewport();
 });
 
-// Добавляем обработчик события для карточек услуг
-serviceCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.querySelector('.service-text').classList.add('hovered');
+    // Анимация для текста в разделе "Перейти к оформлению"
+    window.addEventListener('load', () => {
+        const orderContent = document.querySelector('.order-content');
+        orderContent.classList.add('animated'); // Добавляем класс для анимации
     });
 
-    card.addEventListener('mouseleave', () => {
-        card.querySelector('.service-text').classList.remove('hovered');
+    // Добавляем обработчик события для карточек услуг
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.querySelector('.service-text').classList.add('hovered');
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.querySelector('.service-text').classList.remove('hovered');
+        });
     });
-});

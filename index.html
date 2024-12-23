@@ -13,6 +13,7 @@
         <nav>
             <div class="logo" onclick="window.location.reload()">DriveHub</div>
             <ul class="nav-links">
+                <li><a href="#hero">Главная</a></li>
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#gallery">Автопарк</a></li>
@@ -22,7 +23,7 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="hero-content">
             <h1>Добро пожаловать в DriveHub</h1>
             <p>Лучшие автомобили и сервис для вас</p>
@@ -31,7 +32,7 @@
         <div class="parallax-image" id="parallax" style="background: url('image/тачка.jpg') no-repeat center center/cover;"></div>
     </section>
 
-    <section id="about" class="about">
+    <section id="about" class="about section-animation">
         <h2>О нас</h2>
         <p>Мы предлагаем широкий выбор автомобилей, а также качественный сервис для всех наших клиентов.</p>
         <div class="about-stats">
@@ -95,7 +96,7 @@
         </div>
     </section>
 
-    <section id="services" class="services">
+    <section id="services" class="services section-animation">
         <div class="service-text2">
             <h2>Наши услуги</h2>
         </div>
@@ -137,12 +138,12 @@
             </div>
         </div>
         <div class="slider-controls">
-            <button onclick="prevService()" class="gallery-btn prev-btn">←</button>
-            <button onclick="nextService()" class="gallery-btn next-btn">→</button>
+            <button onclick="prevService()" class="slider-btn prev-btn">←</button>
+            <button onclick="nextService()" class="slider-btn next-btn">→</button>
         </div>
     </section>
 
-    <section id="gallery" class="gallery">
+    <section id="gallery" class="gallery section-animation">
         <h2>Изысканный автопарк. <br> Каждый найдет свой автомобиль.</h2>
         <div class="gallery-slider">
             <div class="gallery-slide">
@@ -258,13 +259,9 @@
                 </div>
             </div>
         </div>
-        <div class="slider-controls">
-            <button onclick="prevGallerySlide()" class="gallery-btn prev-btn">←</button>
-            <button onclick="nextGallerySlide()" class="gallery-btn next-btn">→</button>
-        </div>
     </section>
 
-    <section id="order" class="order">
+    <section id="order" class="order section-animation">
         <div class="order-content">
             <h2>Готовы оформить заказ?</h2>
             <p>Выберите свой автомобиль и начните оформление прямо сейчас. Мы сделаем процесс максимально удобным и быстрым!</p>
@@ -272,9 +269,9 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Контакты</h2>
-        <p>Свяжитесь с нами для получения дополнительной информации:</p>
+    <section id="contact" class="contact section-animation">
+        <h2 id="contact-text">Контакты</h2>
+        <p id="contact-text">Свяжитесь с нами для получения дополнительной информации:</p>
         <form action="#" method="post">
             <input type="text" name="name" placeholder="Ваше имя" required>
             <input type="email" name="email" placeholder="Ваш email" required>
