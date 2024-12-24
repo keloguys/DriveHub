@@ -1,3 +1,4 @@
+/* Общие стили */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -5,14 +6,17 @@ body {
     line-height: 1.6;
     font-size: 1.1rem;
     overflow-x: hidden;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    transition: background 0.5s ease;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+/* Шапка */
 header {
-    background: #333;
+    background: linear-gradient(135deg, #333, #555);
     color: #fff;
     padding: 1rem 0;
     position: fixed;
@@ -20,7 +24,8 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 header.hidden {
@@ -37,17 +42,18 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .logo:hover {
     color: #ffcc00;
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -59,20 +65,52 @@ nav {
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s;
-    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .nav-links a:hover {
     color: #ffcc00;
+    transform: translateY(-3px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #ffcc00;
+}
+
+/* Главный экран */
 .hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    background: linear-gradient(135deg, #000, #333);
 }
 
 .hero-content {
@@ -86,31 +124,39 @@ nav {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 15px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content .btn {
-    background: #ffcc00;
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
     color: #333;
-    padding: 10px 20px;
+    padding: 15px 30px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
 }
 
 .hero-content .btn:hover {
-    background: #e6b800;
+    background: linear-gradient(135deg, #e6b800, #ffcc00);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .parallax-image {
@@ -121,25 +167,67 @@ nav {
     width: 100%;
     height: 100%;
     z-index: 1;
+    animation: parallax 10s infinite alternate;
+    filter: brightness(0.5);
 }
 
+@keyframes parallax {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Секция "О нас" */
 .about {
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
     background: linear-gradient(135deg, #000, #000);
     color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .about h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .about p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 40px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .about-stats {
@@ -147,15 +235,18 @@ nav {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .stat-block {
     flex: 1 1 200px;
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .stat-block:hover {
@@ -164,27 +255,35 @@ nav {
 }
 
 .stat-number {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: #ffcc00;
     margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
 .stat-label {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #fff;
 }
 
+/* Отзывы */
 .reviews {
     margin-top: 40px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .reviews h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .review-list {
@@ -197,11 +296,12 @@ nav {
 .review {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     max-width: 300px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .review:hover {
@@ -210,34 +310,44 @@ nav {
 }
 
 .review-avatar {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-bottom: 10px;
+    border: 3px solid #ffcc00;
 }
 
 .review-content h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     color: #ffcc00;
 }
 
 .review-content p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #fff;
 }
 
-.review.expanded {
-    max-width: 600px;
-    z-index: 100;
-    position: relative;
-}
-
+/* Услуги */
 .services {
     position: relative;
-    padding: 50px 20px;
+    padding: 80px 20px;
     background: linear-gradient(135deg, #000, #000);
     overflow: hidden;
+}
+
+.service-text2 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 85px;
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .service-slider {
@@ -263,6 +373,7 @@ nav {
     justify-content: center;
     align-items: center;
     perspective: 1000px;
+    border-radius: 15px;
 }
 
 .service-card.visible {
@@ -277,7 +388,7 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: transform 0.5s ease;
 }
 .service-card:hover {
@@ -300,33 +411,23 @@ nav {
     color: #fff;
     background: rgba(0, 0, 0, 0.6);
     padding: 15px 25px;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
 }
 
 .service-text h3 {
     margin: 0 0 10px;
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     color: #ffcc00;
 }
 
 .service-text p {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     color: #fff;
-}
-
-.service-text2 h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 85px;
-    font-size: 2rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
 }
 
 .slider-controls {
@@ -341,9 +442,9 @@ nav {
     color: #333;
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -390,88 +491,80 @@ nav {
     }
 }
 
-@media (max-width: 768px) {
-    .slider-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .slider-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
-    }
-}
-
+/* Галерея */
 .gallery {
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
     background: linear-gradient(135deg, #000, #000);
     overflow: hidden;
     position: relative;
-    height: 100vh;
+    height: auto;
 }
 
 .gallery h2 {
     margin-top: 100px;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     color: #fff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .gallery-slider {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
     flex-wrap: wrap;
-    position: relative;
-    perspective: 1000px;
-    height: 100%;
-    margin-top: -100px;
-    margin-left: 0; /* Убираем отступ слева */
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 .gallery-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    opacity: 0;
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    position: absolute;
     width: 100%;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .gallery-slide.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
-.gallery-slide img {
-    width: 100%; /* Устанавливаем ширину изображения на 100% */
-    max-width: 600px; /* Максимальная ширина изображения */
-    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
-    border-radius: 10px;
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
 }
 
 .gallery-description {
-    width: 100%; /* Устанавливаем ширину описания на 100% */
-    max-width: 600px; /* Максимальная ширина описания */
+    margin-top: 20px;
     color: #fff;
     text-align: left;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
 }
 
 .gallery-description h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .car-specs {
@@ -486,34 +579,40 @@ nav {
 }
 
 .car-specs .icon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: #ffcc00;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.car-specs .icon:hover {
+    transform: scale(1.1);
 }
 
 .car-specs .icon i {
     color: #333;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .car-specs .spec-label {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #ffcc00;
     margin-right: 10px;
 }
 
 .car-specs .spec-value {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #fff;
 }
 
+/* Оформить заказ */
 .order {
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
     background: linear-gradient(135deg, #000, #000);
     color: #fff;
@@ -531,6 +630,8 @@ nav {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .order-content.animated {
@@ -539,14 +640,18 @@ nav {
 }
 
 .order-content h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .order-content p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 40px;
     line-height: 1.6;
 }
@@ -556,8 +661,8 @@ nav {
     color: #333;
     padding: 15px 30px;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
     transition: background 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -586,8 +691,9 @@ nav {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Контакты */
 .contact {
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
     background: linear-gradient(135deg, #000, #000);
 }
@@ -604,23 +710,34 @@ color: #ffffff;
 .contact input,
 .contact textarea {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
 }
 
 .contact-btn {
     background: linear-gradient(135deg, #ffcc00, #e6b800);
     color: #333;
-    padding: 10px 20px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background 0.5s ease, transform 0.3s ease;
-    font-size: 1rem;
+    font-size: 1.2rem;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .contact-btn::before {
@@ -641,6 +758,7 @@ color: #ffffff;
 
 .contact-btn:hover {
     transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .map-container {
@@ -653,289 +771,173 @@ color: #ffffff;
 }
 
 .map-container h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffcc00, #e6b800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .map-container iframe {
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border: none;
+    width: 100%;
+    height: 300px;
 }
 
+/* Футер */
 footer {
-    background: #333;
+    background: linear-gradient(135deg, #333, #555);
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    flex: 1 1 300px;
+    text-align: left;
+}
+
+.footer-logo h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-logo p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.footer-social {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.footer-social h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+.footer-contact {
+    flex: 1 1 300px;
+    text-align: left;
+}
+
+.footer-contact h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-contact p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.8;
 }
 
 /* Медиа-запросы для адаптивности */
-@media (max-width: 1200px) {
-    .service-slider,
-    .gallery-slider {
+@media (max-width: 768px) {
+    .footer-content {
         flex-direction: column;
         align-items: center;
     }
 
-    .service-card,
-    .gallery-slide {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .gallery-description {
-        width: 100%;
+    .footer-logo,
+    .footer-social,
+    .footer-contact {
         text-align: center;
     }
-}
 
-@media (max-width: 768px) {
-    /* Скрываем изображения в разделе галереи */
-    .gallery-slide img {
+    .social-icons {
+        margin-top: 20px;
+    }
+
+    /* Скрываем навигацию и показываем кнопку меню */
+    .nav-links {
         display: none;
-    }
-
-    /* Устанавливаем описание автомобилей на всю ширину */
-    .gallery-description {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
         width: 100%;
-        text-align: center;
+        background: linear-gradient(135deg, #333, #555);
+        padding: 20px;
+        z-index: 1000;
     }
 
-    /* Убираем горизонтальное выравнивание для характеристик автомобилей */
-    .car-specs li {
-        flex-direction: column;
-        text-align: center;
+    .nav-links.active {
+        display: flex;
     }
 
-    /* Центрируем иконки характеристик */
-    .car-specs .icon {
-        margin: 0 auto 10px;
+    .menu-toggle {
+        display: block;
     }
 
-    /* Уменьшаем размер заголовка описания автомобиля */
-    .gallery-description h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-
-    /* Уменьшаем размер текста характеристик автомобиля */
-    .car-specs .spec-label,
-    .car-specs .spec-value {
-        font-size: 1rem;
-    }
-
-    /* Убираем отступы у слайдера */
+    /* Галерея */
     .gallery-slider {
-        margin-top: 0;
-        margin-left: 0;
-    }
-
-    /* Устанавливаем слайды в вертикальное положение */
-    .gallery-slide {
         flex-direction: column;
-    }
-
-    /* Уменьшаем отступ для кнопок слайдера */
-    .slider-controls {
-        margin-top: 10px;
-        margin-top: 40px;
         gap: 40px;
     }
 
-    /* Улучшение адаптивности для кнопок навигации в header */
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        display: none;
-    }
-
-    .nav-links a {
-        font-size: 1rem;
-        padding: 10px 0;
-    }
-
-    .nav-links li {
-        margin: 0;
-    }
-
-    /* Уменьшаем размер текста в разделе "О нас" */
-    .about h2 {
-        font-size: 2rem;
-    }
-
-    .about p {
-        font-size: 1.1rem;
-    }
-
-    /* Уменьшаем размер текста в разделе "Услуги" */
-    .service-text h3 {
-        font-size: 1.2rem;
-    }
-
-    .service-text p {
-        font-size: 1rem;
-    }
-
-    /* Уменьшаем размер текста в разделе "Галерея" */
-    .gallery h2 {
-        font-size: 2rem;
-    }
-
-    /* Уменьшаем размер текста в разделе "Оформить заказ" */
-    .order-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .order-content p {
-        font-size: 1rem;
-    }
-
-    /* Уменьшаем размер кнопки в разделе "Оформить заказ" */
-    .order-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    /* Уменьшаем размер текста в разделе "Контакты" */
-    .contact h2 {
-        font-size: 2rem;
-    }
-
-    .contact p {
-        font-size: 1.1rem;
-    }
-
-    /* Уменьшаем размер кнопки в разделе "Контакты" */
-    .contact-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    /* Уменьшаем размер текста в футере */
-    footer {
-        padding: 10px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    .hero-content .btn {
-        font-size: 0.9rem;
-        padding: 6px 12px;
-    }
-
-    .about-stats {
-        flex-direction: column;
-    }
-
-    .stat-block {
-        margin-bottom: 15px;
-    }
-
-    .review-list {
-        flex-direction: column;
-    }
-
-    .review {
-        max-width: 100%;
-    }
-
-    .service-card {
-        flex-direction: column;
-    }
-
-    .service-text {
-        position: static;
-        background: rgba(0, 0, 0, 0.6);
-        padding: 10px;
-        border-radius: 0;
-    }
-
-    .service-text h3 {
-        font-size: 1rem;
-    }
-
-    .service-text p {
-        font-size: 0.9rem;
-    }
-
-    .gallery-slider {
-        flex-direction: column;
-    }
-
     .gallery-slide {
         flex-direction: column;
     }
 
     .gallery-slide img {
-        width: 100%;
-    }
-
-    .gallery-description {
-        width: 100%;
-        text-align: center;
-    }
-
-    .car-specs li {
-        flex-direction: column;
-        text-align: center;
-        height: 70px;
-    }
-
-    .order-content h2 {
-        font-size: 1.2rem;
-    }
-
-    .order-content p {
-        font-size: 0.9rem;
-    }
-
-    .order-btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-
-    .contact form {
         max-width: 100%;
     }
 
-    .contact input,
-    .contact textarea {
-        font-size: 0.9rem;
-    }
-
-    .contact-btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-
-    footer {
-        padding: 8px 0;
-    }
-
-    /* Улучшение адаптивности для кнопок навигации в header */
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-links a {
-        font-size: 0.9rem;
-        padding: 8px 0;
-    }
-
-    .nav-links li {
-        margin: 0;
+    .gallery-description {
+        max-width: 100%;
     }
 }

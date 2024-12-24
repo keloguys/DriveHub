@@ -137,8 +137,6 @@ function prevGallerySlide() {
 // Автоматическое переключение изображений каждые 3 секунды
 setInterval(nextImage, 6000);
 
-// Автоматическое переключение слайдов в галерее каждые 6 секунд
-setInterval(nextGallerySlide, 6000);
 
 // Инициализация отображения первого изображения
 showImage(currentIndex);
@@ -230,3 +228,42 @@ window.addEventListener('load', () => {
             card.querySelector('.service-text').classList.remove('hovered');
         });
     });
+
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+    // Функция для анимации появления элементов при прокрутке
+    // Функция для анимации слайдов в галерее
+function animateGallerySlides() {
+    const gallerySlides = document.querySelectorAll('.gallery-slide');
+
+    // Опции для Intersection Observer
+    const options = {
+        root: null, // Используем viewport
+        rootMargin: '0px',
+        threshold: 0.1 // Активируем, когда 10% элемента видно
+    };
+
+    // Callback для Intersection Observer
+    const callback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Если элемент в области просмотра, добавляем класс visible
+                entry.target.classList.add('visible');
+            }
+        });
+    };
+
+    // Создаем Intersection Observer
+    const observer = new IntersectionObserver(callback, options);
+
+    // Наблюдаем за каждым слайдом
+    gallerySlides.forEach(slide => {
+        observer.observe(slide);
+    });
+}
+
+// Вызываем функцию анимации при загрузке страницы
+window.addEventListener('load', animateGallerySlides);
